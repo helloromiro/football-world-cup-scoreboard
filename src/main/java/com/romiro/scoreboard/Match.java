@@ -1,8 +1,8 @@
 package com.romiro.scoreboard;
 
 public class Match {
-    private final String homeTeam;
-    private final String awayTeam;
+    private String homeTeam;
+    private String awayTeam;
     private int homeScore;
     private int awayScore;
 
@@ -18,6 +18,14 @@ public class Match {
         this.awayScore = awayScore;
     }
 
+    public String getHomeTeam() {
+        return homeTeam;
+    }
+
+    public String getAwayTeam() {
+        return awayTeam;
+    }
+
     public int getHomeScore() {
         return homeScore;
     }
@@ -26,11 +34,12 @@ public class Match {
         return awayScore;
     }
 
-    public String getHomeTeam() {
-        return homeTeam;
+    public int getTotalScore() {
+        return homeScore + awayScore;
     }
 
-    public String getAwayTeam() {
-        return awayTeam;
+    @Override
+    public String toString() {
+        return homeTeam + " " + homeScore + " - " + awayScore + " " + awayTeam;
     }
 }
